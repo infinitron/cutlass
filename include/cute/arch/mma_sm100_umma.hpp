@@ -1207,8 +1207,10 @@ struct SM100_MMA_S8_2x1SM_SS_SPARSE
   }
 };
 
-struct SM100_MMA_F8F6F4_SS
-{
+template <class a_type, class b_type, class c_type, int M, int N,
+          UMMA::Major a_major, UMMA::Major b_major, UMMA::ScaleIn a_neg,
+          UMMA::ScaleIn b_neg>
+struct SM100_MMA_F8F6F4_SS {
   using DRegisters = void;
   using ARegisters = uint64_t[1];
   using BRegisters = uint64_t[1];
